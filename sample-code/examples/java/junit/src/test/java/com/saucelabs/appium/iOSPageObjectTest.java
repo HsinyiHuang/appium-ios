@@ -40,13 +40,11 @@ public class iOSPageObjectTest {
 	
 	@Before
 	public void setUp() throws Exception {
-        File appDir = new File(System.getProperty("user.dir"), 
-        		"../../../apps/TestApp/build/release-iphonesimulator");
-        File app = new File(appDir, "TestApp.app");
+         File app = new File( "/Users/Hsinyi/Library/Developer/Xcode/DerivedData/EsunMobileBank-cvipwbwbzeyruyafgtaswyntypji/Build/Products/Debug-iphonesimulator/玉山銀行.app");
 	    DesiredCapabilities capabilities = new DesiredCapabilities();
 	    capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "");
 	    capabilities.setCapability(MobileCapabilityType.APPIUM_VERSION, "1.6");
-	    capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.1");
+	    capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.3");
 	    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 6");
 	    capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 	    
@@ -59,7 +57,7 @@ public class iOSPageObjectTest {
 
 	@After
 	public void tearDown() throws Exception {
-		driver.quit();
+		//driver.quit();
 	}
 	
 	/**
@@ -71,6 +69,7 @@ public class iOSPageObjectTest {
 
 	@Test
 	public void findByElementsTest() {
+		
 		Assert.assertNotEquals(0, uiTestApp.uiButtons.size());
 	}
 
